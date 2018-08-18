@@ -21,7 +21,7 @@ export default {
           height: 0,
         },
         shadowRadius: 2,
-        shadowOpacity: 0.3,
+        shadowOpacity: 0.5,
       },
       android: {
         elevation: 3,

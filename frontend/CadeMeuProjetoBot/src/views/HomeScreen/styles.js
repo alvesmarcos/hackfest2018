@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { colors, fonts } from '../../styles';
+import { colors, fonts, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: fonts.bigger * 1.5,
     ...fonts.fontWeightLight,
+    marginBottom: metrics.distance,
   },
 });
 
