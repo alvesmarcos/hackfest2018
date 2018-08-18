@@ -11,6 +11,7 @@ const rostoComFundo = require('./rosto_com_fundo.png');
 const roboUsuarioDigitando = require('./usuario_digitando.png');
 const roboSemResultado = require('./robo_sem_resultado.png');
 const roboPensando = require('./robo_pensando.png');
+const mockFotoVereador = require('./thiago-lucena-d.jpg');
 
 export {
   apenasRosto,
@@ -26,4 +27,5 @@ export {
   roboUsuarioDigitando,
   roboSemResultado,
   roboPensando,
+  mockFotoVereador,
 };

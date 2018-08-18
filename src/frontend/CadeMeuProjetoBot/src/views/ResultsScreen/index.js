@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
+import { View, Image, TouchableOpacity, } from 'react-native';
+import { OptimizedFlatList } from 'react-native-optimized-flatlist';
 
-import { View, Image } from 'react-native';
 import { roboResultadoFeliz } from '../../assets/index';
-
 import styles from './styles';
 import { Input } from '../../components';
+import RenderCard from './components/RenderCard';
 
 export default class ResultsScreen extends Component {
-  state = { message: '', robotImage: roboResultadoFeliz };
-
-  onChangeText = message => this.setState({ message });
+  state = { robotImage: roboResultadoFeliz };
 
   onPress = () => false;
 
   render() {
-    const { message, robotImage } = this.state;
+    const { robotImage } = this.state;
+    const  { navigation } = this.props;
+    const message = navigation.getParam('message');
+
     return (
       <View style={styles.container}>
-        <Input value={message} onChangeText={this.onChangeText} onPress={this.onPress} />
+        <Input value={message} onChangeText={() => false} onPress={this.onPress} editable={false} />
         <Image source={robotImage} style={styles.robotImage} />
+
+        <OptimizedFlatList
+          data={[{name: 'fred', name: 'freddy'}]}
+          renderItem={ ({item}) => <RenderCard data={item} />}
+        />
       </View>
     );
   }

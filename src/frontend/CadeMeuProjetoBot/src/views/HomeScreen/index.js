@@ -31,8 +31,8 @@ class HomeScreen extends React.Component {
 
   delaySimulator = () => new Promise((resolve) => {
     setTimeout(() => {
-      resolve(Math.random() > 0.5);
-    }, 1500);
+      resolve(true);
+    }, 0);
   });
 
   onPress = async () => {
@@ -47,7 +47,7 @@ class HomeScreen extends React.Component {
     }
     this.setState({ loading: false });
     // Encontrou resultados
-    return this.props.navigation.navigate('Results');
+    return this.props.navigation.navigate('Results', { message: this.state.message });
   };
 
   render() {
