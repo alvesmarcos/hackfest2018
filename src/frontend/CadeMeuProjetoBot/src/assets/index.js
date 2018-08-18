@@ -10,6 +10,7 @@ const roboResultadoTriste = require('./robo_resultado_triste.png');
 const rostoComFundo = require('./rosto_com_fundo.png');
 const roboUsuarioDigitando = require('./usuario_digitando.png');
 const roboSemResultado = require('./robo_sem_resultado.png');
+const roboPensando = require('./robo_pensando.png');
 
 export {
   apenasRosto,
@@ -24,4 +25,5 @@ export {
   rostoComFundo,
   roboUsuarioDigitando,
   roboSemResultado,
+  roboPensando,
 };

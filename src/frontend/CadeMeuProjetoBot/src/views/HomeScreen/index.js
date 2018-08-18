@@ -9,6 +9,7 @@ import {
   roboUsuarioDigitando,
   roboInputVazio,
   roboSemResultado,
+  roboPensando,
 } from '../../assets/index';
 
 class HomeScreen extends React.Component {
@@ -18,7 +19,13 @@ class HomeScreen extends React.Component {
     }).isRequired,
   };
 
-  state = { message: '', robotImage: roboHome };
+  state = { message: '', robotImage: roboHome, loading: false };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.loading !== this.state.loading && this.state.loading) {
+      this.setState({ robotImage: roboPensando }); // eslint-disable-line
+    }
+  }
 
   onChangeText = (message) => {
     let robotImage = roboHome;
@@ -28,12 +35,20 @@ class HomeScreen extends React.Component {
     this.setState({ message, robotImage });
   };
 
-  onPress = () => {
+  delaySimulator = () => new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(Math.random() > 0.5);
+    }, 1500);
+  });
+
+  onPress = async () => {
     if (!this.state.message) {
       return this.setState({ robotImage: roboInputVazio });
     }
+    this.setState({ loading: true });
+    const result = await this.delaySimulator();
     // Se nao encontrar resultados
-    if (Math.random() > 0.5) {
+    if (!result) {
       return this.setState({ robotImage: roboSemResultado });
     }
     // Encontrou resultados
