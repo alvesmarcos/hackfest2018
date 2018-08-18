@@ -21,12 +21,6 @@ class HomeScreen extends React.Component {
 
   state = { message: '', robotImage: roboHome, loading: false };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.loading !== this.state.loading && this.state.loading) {
-      this.setState({ robotImage: roboPensando }); // eslint-disable-line
-    }
-  }
-
   onChangeText = (message) => {
     let robotImage = roboHome;
     if (message) {
@@ -49,17 +43,18 @@ class HomeScreen extends React.Component {
     const result = await this.delaySimulator();
     // Se nao encontrar resultados
     if (!result) {
-      return this.setState({ robotImage: roboSemResultado });
+      return this.setState({ robotImage: roboSemResultado, loading: false });
     }
+    this.setState({ loading: false });
     // Encontrou resultados
     return this.props.navigation.navigate('Results');
   };
 
   render() {
-    const { message, robotImage } = this.state;
+    const { message, robotImage, loading } = this.state;
     return (
       <View style={styles.container}>
-        <Image source={robotImage} style={styles.robotImage} />
+        <Image source={loading ? roboPensando : robotImage} style={styles.robotImage} />
         <Input value={message} onChangeText={this.onChangeText} onPress={this.onPress} />
       </View>
     );
