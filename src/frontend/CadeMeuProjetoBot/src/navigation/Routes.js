@@ -20,6 +20,7 @@ const Routes = StackNavigator(
       header: null,
       headerBackTitle: null,
     },
+    initialRouteName: 'Main'
   },
 );
 

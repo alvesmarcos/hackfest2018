@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { TouchableOpacity, Text, Image, View } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 
-import { TouchableOpacity, Text } from 'react-native';
+import { mockFotoVereador } from '../../../../assets';
 
 import styles from './styles';
 
@@ -8,12 +10,18 @@ export default class RenderCard extends Component {
   render() {
     return (
       <TouchableOpacity style={styles.container}>
-        <Text>akskask ask askas k</Text>
-        <Text>akskask ask askas k</Text>
-        <Text>akskask ask askas k</Text>
-        <Text>akskask ask askas k</Text>
-        <Text>akskask ask askas k</Text>
-        <Text>akskask ask askas k</Text>
+        <View style={styles.containerImage}>
+          <Image 
+            source={mockFotoVereador}
+            style={styles.image}
+          />
+        </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 }}>
+          <Text>Data</Text>
+          <Text>Numero</Text>
+        </View>
+        <Text>Apelido</Text>
+        <Text>{'Tramitação'}</Text>
       </TouchableOpacity>
     );
   }

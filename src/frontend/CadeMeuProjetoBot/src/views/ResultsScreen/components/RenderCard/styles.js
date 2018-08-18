@@ -5,11 +5,21 @@ import { metrics, colors } from '../../../../styles';
 const styles = StyleSheet.create({
   container: {
     padding: metrics.distance,
-    margin: metrics.halfDistance,
-    ...metrics.shadow,
+   ...metrics.shadow,
     borderRadius: metrics.radius,
     backgroundColor: colors.background,
     width: '100%',
+    marginTop: 40,
+  },
+  containerImage: { 
+    alignItems: 'center',
+    marginTop: -50
+  },
+  image: { 
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    resizeMode: 'cover'
   }
 });
 

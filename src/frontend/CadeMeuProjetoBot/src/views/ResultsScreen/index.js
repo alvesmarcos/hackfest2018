@@ -23,7 +23,7 @@ export default class ResultsScreen extends Component {
         <Image source={robotImage} style={styles.robotImage} />
 
         <OptimizedFlatList
-          data={[{name: 'fred', name: 'freddy'}, {name: 'fred', name: 'freddy'}]}
+          data={[{name: 'fred', name: 'freddy'}]}
           renderItem={ ({item}) => <RenderCard data={item} />}
         />
       </View>
