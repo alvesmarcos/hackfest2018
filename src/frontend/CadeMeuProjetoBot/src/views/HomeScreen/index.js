@@ -1,20 +1,33 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Image } from 'react-native';
 
 import styles from './styles';
 import { Input } from '../../components';
+import { roboHome, roboUsuarioDigitando, roboInputVazio } from '../../assets/index';
 
 class HomeScreen extends React.Component {
-  state = { message: '' };
+  state = { message: '', robotImage: roboHome };
 
-  onChangeText = message => this.setState({ message });
+  onChangeText = (message) => {
+    let robotImage = roboHome;
+    if (message) {
+      robotImage = roboUsuarioDigitando;
+    }
+    this.setState({ message, robotImage });
+  };
+
+  onPress = () => {
+    if (!this.state.message) {
+      return this.setState({ robotImage: roboInputVazio });
+    }
+  }
 
   render() {
-    const { message } = this.state;
+    const { message, robotImage } = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Cadê meu projeto?</Text>
-        <Input value={message} onChangeText={this.onChangeText} onPress={() => false} />
+        <Image source={robotImage} style={styles.robotImage} />
+        <Input value={message} onChangeText={this.onChangeText} onPress={this.onPress} />
       </View>
     );
   }

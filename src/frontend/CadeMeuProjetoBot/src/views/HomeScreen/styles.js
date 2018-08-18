@@ -8,6 +8,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.primary,
+    marginBottom: 45,
+  },
+  robotImage: {
+    resizeMode: 'contain',
+    height: 220,
   },
   text: {
     color: colors.white,
