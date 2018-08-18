@@ -31,8 +31,8 @@ class HomeScreen extends React.Component {
 
   delaySimulator = () => new Promise((resolve) => {
     setTimeout(() => {
-      resolve(Math.random() > 0.5);
-    }, 1500);
+      resolve(true);
+    }, 0);
   });
 
   onPress = async () => {
@@ -42,7 +42,7 @@ class HomeScreen extends React.Component {
     this.setState({ loading: true });
     const result = await this.delaySimulator();
     // Se nao encontrar resultados
-    if (false) {
+    if (!result) {
       return this.setState({ robotImage: roboSemResultado, loading: false });
     }
     this.setState({ loading: false });

@@ -5,6 +5,7 @@ import { OptimizedFlatList } from 'react-native-optimized-flatlist';
 import { roboResultadoFeliz } from '../../assets/index';
 import styles from './styles';
 import { Input } from '../../components';
+import RenderCard from './components/RenderCard';
 
 export default class ResultsScreen extends Component {
   state = { robotImage: roboResultadoFeliz };
@@ -18,8 +19,13 @@ export default class ResultsScreen extends Component {
 
     return (
       <View style={styles.container}>
-          <Input value={message} onChangeText={() => false} onPress={this.onPress} editable={false} />
-          <Image source={robotImage} style={styles.robotImage} />
+        <Input value={message} onChangeText={() => false} onPress={this.onPress} editable={false} />
+        <Image source={robotImage} style={styles.robotImage} />
+
+        <OptimizedFlatList
+          data={[{name: 'fred', name: 'freddy'}, {name: 'fred', name: 'freddy'}]}
+          renderItem={ ({item}) => <RenderCard data={item} />}
+        />
       </View>
     );
   }
