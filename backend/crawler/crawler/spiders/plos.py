@@ -1,5 +1,6 @@
 import scrapy
 import re
+import json
 
 class QuotesSpider(scrapy.Spider):
     name = "plo"
@@ -8,17 +9,47 @@ class QuotesSpider(scrapy.Spider):
     ]
 
     def __init__(self):
-        with open('../../links.json') as json_data:
-            self.links = json.load(json_data)
+        with open('links.json', 'r') as json_data:
+            self.json_content = json.load(json_data)
+            
             self.dic = {
-
             }
     
     def start_requests(self):
-        
-        for link in self.links:
-            yield scrapy.Request(url=link, callback=self.parse)
-
+        for json_item in self.json_content:
+                for link in json_item['url']:
+                    # print(link)
+                    yield scrapy.Request(url=link, callback=self.parse)
 
     def parse(self, response):
-        urls = response.xpath('//table').extract()
+        aux = response.xpath('//fieldset[1]/table')
+        infos = aux.css('td::text').extract()
+        tipo = re.sub(r'(\s* \W)|(\A\s)', "", infos[0])
+        numero = re.sub(r'(\s* \W)|(\A\s)', "", infos[1])
+        data1 = re.sub(r'(\s* \W)|(\A\s)', "", infos[2])
+        
+        if len(infos) == 14:
+            processo = re.sub(r'(\s* \W)|(\A\s)', "", infos[3])
+            ementa = re.sub(r'(\s* \W)|(\A\s)', "", infos[4])
+            observacao = re.sub(r'(\s* \W)|(\A\s)', "", infos[6])
+            autor = re.sub(r'(\s* \W)|(\A\s)', "", infos[8])
+            despacho = re.sub(r'(\s* \W)|(\A\s)', "", infos[10])
+        
+        if len(infos) == 12:
+            processo = ""
+            ementa = re.sub(r'(\s* \W)|(\A\s)', "", infos[3])
+            observacao = ""
+            autor = re.sub(r'(\s* \W)|(\A\s)', "", infos[6])
+            despacho = re.sub(r'(\s* \W)|(\A\s)', "", infos[8])
+
+        yield {
+            'tipo': tipo,
+            'numero': numero,
+            'data': data1,
+            'processo': processo,
+            'ementa': ementa,
+            'observacao': observacao,
+            'autor': autor,
+            'despacho': despacho,
+        }
+        return

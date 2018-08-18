@@ -9,9 +9,6 @@ class QuotesSpider(scrapy.Spider):
 
     def parse(self, response):
         urls = response.xpath('//td[@class="texto"]/a[1]/@href').extract()
-        
-        # for url in urls:
-        #     yield scrapy.Request(url=url, callback=self.getInfo)
 
         yield{ 
             'url': urls,
