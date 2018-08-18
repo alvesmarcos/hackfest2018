@@ -1,3 +1,4 @@
 import HomeScreen from './HomeScreen/index';
+import DraggerScreen from './DraggerScreen/index';
 
-export { HomeScreen };
+export { HomeScreen, DraggerScreen };
