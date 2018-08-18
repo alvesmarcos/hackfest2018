@@ -1,11 +1,11 @@
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 // import { colors } from '../styles';
 
 // Views
 import { DraggerScreen, ResultsScreen, DraggerDetailsScreen } from '../views';
 
-const Routes = StackNavigator(
+const Routes = createStackNavigator(
   {
     Main: { screen: DraggerScreen },
     Results: { screen: ResultsScreen },

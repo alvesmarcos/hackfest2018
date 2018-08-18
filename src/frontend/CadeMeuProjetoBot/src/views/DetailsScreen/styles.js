@@ -3,11 +3,13 @@ import { StyleSheet } from 'react-native';
 import { colors, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
-  initDrawerContainer: {
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: metrics.distance,
     backgroundColor: colors.white,
-    height: 66,
-    borderTopLeftRadius: metrics.radius * 3,
-    borderTopRightRadius: metrics.radius * 3,
+    marginBottom: 45,
   },
 });
 
