@@ -4,7 +4,12 @@ import { View, Image } from 'react-native';
 
 import styles from './styles';
 import { Input } from '../../components';
-import { roboHome, roboUsuarioDigitando, roboInputVazio } from '../../assets/index';
+import {
+  roboHome,
+  roboUsuarioDigitando,
+  roboInputVazio,
+  roboSemResultado,
+} from '../../assets/index';
 
 class HomeScreen extends React.Component {
   static propTypes = {
@@ -27,6 +32,11 @@ class HomeScreen extends React.Component {
     if (!this.state.message) {
       return this.setState({ robotImage: roboInputVazio });
     }
+    // Se nao encontrar resultados
+    if (Math.random() > 0.5) {
+      return this.setState({ robotImage: roboSemResultado });
+    }
+    // Encontrou resultados
     return this.props.navigation.navigate('Results');
   };
 
