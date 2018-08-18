@@ -3,7 +3,7 @@ import { View, Image } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 
 import styles from './styles';
-import { apenasRosto } from '../../../../assets';
+import { apenasRosto } from '../../assets';
 
 export default () => (
   <SafeAreaView style={styles.container}>

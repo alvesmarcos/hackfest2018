@@ -3,12 +3,13 @@ import { StackNavigator } from 'react-navigation';
 // import { colors } from '../styles';
 
 // Views
-import { DraggerScreen, ResultsScreen } from '../views';
+import { DraggerScreen, ResultsScreen, DraggerDetailsScreen } from '../views';
 
 const Routes = StackNavigator(
   {
     Main: { screen: DraggerScreen },
     Results: { screen: ResultsScreen },
+    Details: { screen: DraggerDetailsScreen },
   },
   {
     navigationOptions: {

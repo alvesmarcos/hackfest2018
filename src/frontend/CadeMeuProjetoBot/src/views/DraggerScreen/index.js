@@ -5,8 +5,7 @@ import Drawer from 'react-native-draggable-view';
 
 import styles from './styles';
 import HomeScreen from '../HomeScreen';
-import InitDrawerHeader from './components/InitDrawerHeader';
-import ChaBot from './components/ChatBot';
+import { ChatBot, InitDrawerHeader} from '../../components';
 
 const step = [
   {
@@ -83,7 +82,7 @@ const DraggerScreen = ({ navigation }) => (
     drawerBg="transparent"
     initialDrawerSize={0.09}
     renderContainerView={() => <HomeScreen navigation={navigation} />}
-    renderDrawerView={() => <ChaBot step={step} navigation={navigation} />}
+    renderDrawerView={() => <ChatBot step={step} navigation={navigation} />}
     renderInitDrawerView={() => (
       <View style={styles.initDrawerContainer}>
         <StatusBar hidden />
