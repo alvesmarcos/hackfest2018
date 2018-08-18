@@ -27,6 +27,11 @@ class QuotesSpider(scrapy.Spider):
         tipo = re.sub(r'(\s* \W)|(\A\s)', "", infos[0])
         numero = re.sub(r'(\s* \W)|(\A\s)', "", infos[1])
         data1 = re.sub(r'(\s* \W)|(\A\s)', "", infos[2])
+        processo = re.sub(r'(\s* \W)|(\A\s)', "", infos[3])
+        ementa = re.sub(r'(\s* \W)|(\A\s)', "", infos[4])
+        observacao = re.sub(r'(\s* \W)|(\A\s)', "", infos[6])
+        autor = re.sub(r'(\s* \W)|(\A\s)', "", infos[8])
+        despacho = re.sub(r'(\s* \W)|(\A\s)', "", infos[10])
         
         if len(infos) == 14:
             processo = re.sub(r'(\s* \W)|(\A\s)', "", infos[3])
