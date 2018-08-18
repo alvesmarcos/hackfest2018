@@ -1,10 +1,11 @@
 import scrapy
 import re
+import json
 
 class QuotesSpider(scrapy.Spider):
     name = "reque"
     start_urls = [
-        'http://177.200.32.195:9673/sapl/relatorios_administrativos/historicoTramitacoes/historicoTramitacoes_mostrar_proc?txt_dat_inicio_periodo=11%2F11%2F2016&txt_dat_fim_periodo=06%2F06%2F2017&lst_cod_unid_tram_dest=0&lst_tip_materia=0&lst_status=0&btn_materia_pesquisar=Pesquisar',
+        'http://177.200.32.195:9673/sapl/relatorios_administrativos/historicoTramitacoes/historicoTramitacoes_mostrar_proc?txt_dat_inicio_periodo=1%2F1%2F1900&txt_dat_fim_periodo=06%2F06%2F2017&lst_cod_unid_tram_dest=0&lst_tip_materia=0&lst_status=0&btn_materia_pesquisar=Pesquisar',
     ]
 
     def parse(self, response):
@@ -17,7 +18,7 @@ class QuotesSpider(scrapy.Spider):
         infos = response.css("fieldset table td::text").extract()
 
         #-#-#-#-#-#-#-#     Filtra as infos necessarias       #-#-#-#-#-#-#-#-#
-        
+
         tipo = re.sub(r'(\s* \W)|(\A\s)', "", infos[0])
         numero = re.sub(r'(\s* \W)|(\A\s)', "", infos[1])
         data1 = re.sub(r'(\s* \W)|(\A\s)', "", infos[2])
@@ -47,5 +48,5 @@ class QuotesSpider(scrapy.Spider):
             'origem': origem,
             'destino': destino,
             'sitacao': situacao,
-            'Ultima Acao': lastAction,
+            'ultimaAcao': lastAction,
             }
