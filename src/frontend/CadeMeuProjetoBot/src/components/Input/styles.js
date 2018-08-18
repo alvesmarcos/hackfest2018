@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     ...metrics.shadow,
     borderRadius: metrics.radius,
-    marginHorizontal: metrics.distance,
   },
   btnContainer: {
     backgroundColor: colors.primary,

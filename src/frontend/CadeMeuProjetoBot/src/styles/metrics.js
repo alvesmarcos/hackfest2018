@@ -13,6 +13,7 @@ export default {
   tabBarHeight: 56,
   buttonHeight: 50,
   radius: 5,
+  robotHeight: 220,
   shadow: {
     ...Platform.select({
       ios: {

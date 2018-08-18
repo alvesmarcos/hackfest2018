@@ -7,12 +7,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: metrics.distance,
     backgroundColor: colors.primary,
     marginBottom: 45,
   },
   robotImage: {
     resizeMode: 'contain',
-    height: 220,
+    height: metrics.robotHeight,
   },
   text: {
     color: colors.white,
