@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { mockFotoVereador } from '../../../../assets';
+import { vereadores } from '../../../../assets';
 import InfoComponent from '../InfoComponent';
 
 import styles from './styles';
@@ -33,17 +33,19 @@ export default class RenderCard extends Component {
         }),
       ),
     }).isRequired,
+    onPress: PropTypes.func.isRequired,
   };
 
   state = {};
 
   render() {
-    const { data } = this.props;
+    const { data, onPress } = this.props;
     return (
-      <TouchableOpacity style={styles.container} activeOpacity={0.7}>
+      <TouchableOpacity style={styles.container} activeOpacity={0.7} onPress={onPress}>
         <View style={styles.containerImage}>
-          <Image source={mockFotoVereador} style={styles.image} />
+          <Image source={vereadores(data.autor)} style={styles.image} />
         </View>
+        <Text style={styles.autorLabel}>AUTOR(A)</Text>
         <Text style={styles.autor}>{data.autor}</Text>
         <View style={styles.row}>
           {/* <Text style={styles.info}>Data</Text> */}

@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
+    marginBottom: metrics.halfDistance,
   },
   image: {
     width: 90,
@@ -46,11 +47,18 @@ const styles = StyleSheet.create({
     fontSize: fonts.regular,
     color: colors.regular,
   },
+  autorLabel: {
+    marginTop: metrics.distance,
+    fontSize: fonts.smaller,
+    color: colors.secondary,
+    ...fonts.fontWeightLight,
+    alignSelf: 'center',
+  },
   autor: {
     alignSelf: 'center',
     fontWeight: 'bold',
+    marginBottom: metrics.halfDistance,
     color: colors.primary,
-    marginTop: metrics.distance,
     marginHorizontal: metrics.distance * 2,
     textAlign: 'center',
   },

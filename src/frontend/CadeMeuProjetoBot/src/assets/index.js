@@ -11,63 +11,62 @@ const rostoComFundo = require('./rosto_com_fundo.png');
 const roboUsuarioDigitando = require('./usuario_digitando.png');
 const roboSemResultado = require('./robo_sem_resultado.png');
 const roboPensando = require('./robo_pensando.png');
-const mockFotoVereador = require('./vereadores/thiago-lucena-d.jpg');
 
-const vereadores = nome => {
-  switch(nome) {
-    case "Leopoldo Araújo Bezerra Cavalcanti":
+const vereadores = (nome) => {
+  switch (nome) {
+    case 'Leopoldo Araújo Bezerra Cavalcanti':
       return require('./vereadores/leo-bezerra-d.jpg');
-    case "Durval Ferreira da Silva Filho":
+    case 'Durval Ferreira da Silva Filho':
       return require('./vereadores/durval-ferreira-d.jpg');
-    case "Tanilson Tarso Nóbrega Soares":
+    case 'Tanilson Tarso Nóbrega Soares':
       return require('./vereadores/tanilson-soares-d.jpg');
-    case "Eliza Virgínia de  Souza Fernandes":
+    case 'Eliza Virgínia de  Souza Fernandes':
       return require('./vereadores/eliza-psdb-20516-d.jpg');
-    case "Francisco Henrique da Silva":
+    case 'Francisco Henrique da Silva':
       return require('./vereadores/chico-do-sindicato-pt-do-b-d.jpg');
-    case "Luis Flávio Medeiros Paiva":
+    case 'Luis Flávio Medeiros Paiva':
       return require('./vereadores/dr-luis-flavio-d.jpg');
-    case "João Almeida de Carvalho Júnior":
+    case 'João Almeida de Carvalho Júnior':
       return require('./vereadores/joao-almeida-sd-d.jpg');
-    case "Carlos Tiberio Limeira Santos Fernandes":
-      return require('./vereadores/joao-almeida-sd-d.jpg');;
-    case "Lucas Clemente de Brito Pereira":
+    case 'Carlos Tiberio Limeira Santos Fernandes':
+      return require('./vereadores/joao-almeida-sd-d.jpg');
+    case 'Lucas Clemente de Brito Pereira':
       return require('./vereadores/tiberio-limeira-d.jpg');
-    case "Marcos Vinicius Sales Nobrega":
+    case 'Marcos Vinicius Sales Nobrega':
       return require('./vereadores/marcos-vinicius-psdb-d.jpg');
-    case "José Luiz Pereira Gonçalves":
+    case 'José Luiz Pereira Gonçalves':
       return require('./vereadores/bispo-jose-luiz-d.jpg');
-    case "João Bosco dos Santos Filho":
+    case 'João Bosco dos Santos Filho':
       return require('./vereadores/bosquinho-psc-d.jpg');
-    case "Pedro Alberto de Araújo Coutinho":
+    case 'Pedro Alberto de Araújo Coutinho':
       return require('./vereadores/pedro-alberto-coutinho-d.jpg');
-    case "Damasio Franca Segundo Neto":
+    case 'Damasio Franca Segundo Neto':
       return require('./vereadores/damasio-franca-d.jpg');
-    case "Raíssa Gomes Lacerda Rodrigues Aquino":
+    case 'Raíssa Gomes Lacerda Rodrigues de Aquino':
       return require('./vereadores/raissa-lacerda-d.jpg');
-    case "Fernando Paulo Carrilho Milanes Neto":
+    case 'Fernando Paulo Carrilho Milanes Neto':
       return require('./vereadores/milanez-neto-d.jpg');
-    case "Eduardo Jorge Soares Carneiro":
+    case 'Eduardo Jorge Soares Carneiro':
       return require('./vereadores/eduardo-carneiro-prtb-d.jpg');
-    case "João dos Santos Filho":
+    case 'João dos Santos Filho':
       return require('./vereadores/joao-dos-santos-pr-d.jpg');
-    case "Helton Renê Nunes Holanda":
+    case 'Helton Renê Nunes Holanda':
       return require('./vereadores/helton-rene-d.jpg');
-    case "Bruno Farias de Paiva":
+    case 'Bruno Farias de Paiva':
       return require('./vereadores/bruno-farias-d.jpg');
-    case "João Carvalho da Costa Sobrinho":
+    case 'João Carvalho da Costa Sobrinho':
       return require('./vereadores/joao-corujinha-d.jpg');
-    case "Maria Sandra Pereira de Marrocos":
+    case 'Maria Sandra Pereira de Marrocos':
       return require('./vereadores/sandra-marrocos-d.jpg');
-    case "Valdir Jose Dowsley":
+    case 'Valdir Jose Dowsley':
       return require('./vereadores/dinho-pmn-d.jpg');
-    case "Thiago Nobrega de Lucena":
+    case 'Thiago Nobrega de Lucena':
       return require('./vereadores/thiago-lucena-d.jpg');
-    case "Ronivon Ramalho Diniz":
+    case 'Ronivon Ramalho Diniz':
       return require('./vereadores/mangueira-pmdb-d.jpg');
-    case "Marcos Henriques e Silva":
+    case 'Marcos Henriques e Silva':
       return require('./vereadores/marcos-henriques-d.jpg');
-    case "Humberto Jorge de Araújo Pontes":
+    case 'Humberto Jorge de Araújo Pontes':
       return require('./vereadores/humberto-pontes-d.jpg');
     default:
       return require('./vereadores/placeholder.jpeg');
@@ -88,6 +87,5 @@ export {
   roboUsuarioDigitando,
   roboSemResultado,
   roboPensando,
-  mockFotoVereador,
   vereadores,
 };

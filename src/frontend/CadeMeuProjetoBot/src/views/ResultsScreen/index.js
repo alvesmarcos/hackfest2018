@@ -102,6 +102,7 @@ const exampleData = [
 export default class ResultsScreen extends Component {
   static propTypes = {
     navigation: PropTypes.shape({
+      navigate: PropTypes.func,
       getParam: PropTypes.func,
       goBack: PropTypes.func,
     }).isRequired,
@@ -113,7 +114,9 @@ export default class ResultsScreen extends Component {
 
   keyExtractor = (item, index) => `${index}`;
 
-  renderItem = ({ item }) => <RenderCard data={item} />;
+  onItemPress = data => this.props.navigation.navigate('Details', { data });
+
+  renderItem = ({ item }) => <RenderCard data={item} onPress={() => this.onItemPress(item)} />;
 
   renderHeader = () => (
     <View style={styles.containerHeader}>

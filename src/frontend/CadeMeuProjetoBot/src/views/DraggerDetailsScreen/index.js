@@ -4,7 +4,7 @@ import { View, StatusBar } from 'react-native';
 import Drawer from 'react-native-draggable-view';
 
 import { InitDrawerHeader, ChatBot } from '../../components';
-import DetailsScreen from '../DetailsScreen'
+import DetailsScreen from '../DetailsScreen';
 import styles from './styles';
 
 const step = [
@@ -72,7 +72,9 @@ const DraggerDetailsScreen = ({ navigation }) => (
   <Drawer
     drawerBg="transparent"
     initialDrawerSize={0.09}
-    renderContainerView={() => <DetailsScreen navigation={navigation} />}
+    renderContainerView={() => (
+      <DetailsScreen navigation={navigation} data={navigation.getParam('data')} />
+    )}
     renderDrawerView={() => <ChatBot step={step} navigation={navigation} />}
     renderInitDrawerView={() => (
       <View style={styles.initDrawerContainer}>
