@@ -4,13 +4,20 @@ import { metrics, colors } from '../../styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: metrics.distance,
+    backgroundColor: colors.primary,
+  },
+  input: {
+    marginHorizontal: metrics.distance,
+    marginTop: metrics.distance,
+  },
+  containerHeader: {
+
     backgroundColor: colors.primary,
   },
   robotImage: {
     alignSelf: 'center',
     resizeMode: 'contain',
-    height: metrics.robotHeight / 1.5,
+    height: metrics.robotHeight / 2.2,
   },
 });
 

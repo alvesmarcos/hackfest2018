@@ -3,6 +3,15 @@
  */
 import { Dimensions, Platform } from 'react-native';
 
+const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
+
+function wp(percentage) {
+  const value = (percentage * viewportWidth) / 100;
+  return Math.round(value);
+}
+const itemHorizontalMargin = wp(2);
+const slideWidth = wp(75);
+
 export default {
   windowWidth: Dimensions.get('window').width,
   windowHeight: Dimensions.get('window').height,
@@ -29,4 +38,10 @@ export default {
       },
     }),
   },
+
+  sliderWidth: viewportWidth,
+  itemHorizontalMargin,
+  slideWidth,
+  itemWidth: slideWidth + itemHorizontalMargin * 2,
+  slideHeight: viewportHeight * 0.36,
 };
