@@ -10,61 +10,46 @@ import styles from './styles';
 const step = [
   {
     id: '1',
-    message: 'Qual é o seu nome?',
+    message: 'Você voltou õ/',
     trigger: '2',
   },
   {
     id: '2',
-    user: true,
+    message: 'Quer saber mais sobre este vereador?',
     trigger: '3',
   },
   {
     id: '3',
-    message: 'Prazer em conhecer você {previousValue} :)',
-    trigger: '4',
+    options: [{ value: 1, label: 'Sim', trigger: '5' }, { value: 2, label: 'Não', trigger: '4' }],
   },
   {
     id: '4',
-    message: 'Quer saber como utilizar nosso sistema?',
-    trigger: '5',
+    message: 'Tá bem, se precisar é só chamar (=',
+    end: true
   },
   {
     id: '5',
-    options: [{ value: 1, label: 'Sim', trigger: '7' }, { value: 2, label: 'Não', trigger: '6' }],
+    message: 'Quais dessas informações você quer saber?',
+    trigger: '6',
   },
   {
     id: '6',
-    message: 'Certo, então já podemos começar!',
-    end: true,
+    options: [
+      { value: 1, label: 'Projetos em tramitações', trigger: '7' }, 
+      { value: 2, label: 'Presença', trigger: '4' },
+      { value: 3, label: 'Auxílios', trigger: '4' },
+      { value: 4, label: 'Salário', trigger: '4' },
+      { value: 5, label: 'Partido', trigger: '4' },
+    ],
   },
   {
     id: '7',
-    message:
-      'Nosso aplicativo funciona assim, você utiliza a barra de pesquisa para fazer qualquer pergunta sobre algum tema de seu interesse e retornarenamos os projetos relacionados da Câmara Municipal de João Pessoa.',
+    message: 'Me pergunte mais, estou gostando =DD Quer perguntar mais?',
     trigger: '8',
   },
   {
     id: '8',
-    message: 'Você quer um exemplo de uma pergunta?',
-    trigger: '9',
-  },
-  {
-    id: '9',
-    options: [{ value: 1, label: 'Sim', trigger: '10' }, { value: 2, label: 'Não', trigger: '6' }],
-  },
-  {
-    id: '10',
-    message: 'Ex. Quais projetos relacionados a saúde existem para o bairro de Mangabeira?',
-    trigger: '11',
-  },
-  {
-    id: '11',
-    message: 'Quer outro exemplo?',
-    trigger: '12',
-  },
-  {
-    id: '12',
-    options: [{ value: 1, label: 'Sim', trigger: '6' }, { value: 2, label: 'Não', trigger: '6' }],
+    options: [{ value: 1, label: 'Sim', trigger: '5' }, { value: 2, label: 'Não', trigger: '4' }],
   },
 ];
 
