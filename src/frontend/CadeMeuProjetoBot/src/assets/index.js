@@ -28,7 +28,7 @@ const vereadores = (nome) => {
       return require('./vereadores/dr-luis-flavio-d.jpg');
     case 'João Almeida de Carvalho Júnior':
       return require('./vereadores/joao-almeida-sd-d.jpg');
-    case 'Carlos Tiberio Limeira Santos Fernandes':
+    case 'Carlos Tibério Limeira Santos Fernandes':
       return require('./vereadores/joao-almeida-sd-d.jpg');
     case 'Lucas Clemente de Brito Pereira':
       return require('./vereadores/tiberio-limeira-d.jpg');
@@ -44,9 +44,9 @@ const vereadores = (nome) => {
       return require('./vereadores/damasio-franca-d.jpg');
     case 'Raíssa Gomes Lacerda Rodrigues de Aquino':
       return require('./vereadores/raissa-lacerda-d.jpg');
-    case 'Fernando Paulo Carrilho Milanes Neto':
+    case 'Fernando Paulo Carrilho Milanez Neto':
       return require('./vereadores/milanez-neto-d.jpg');
-    case 'Eduardo Jorge Soares Carneiro':
+    case 'Eduardo Carneiro':
       return require('./vereadores/eduardo-carneiro-prtb-d.jpg');
     case 'João dos Santos Filho':
       return require('./vereadores/joao-dos-santos-pr-d.jpg');
@@ -68,6 +68,8 @@ const vereadores = (nome) => {
       return require('./vereadores/marcos-henriques-d.jpg');
     case 'Humberto Jorge de Araújo Pontes':
       return require('./vereadores/humberto-pontes-d.jpg');
+    case 'Gabriel Carvalho Câmara':
+      return require('./vereadores/professor-gabriel-psd-d.jpg');
     default:
       return require('./vereadores/placeholder.jpeg');
   }

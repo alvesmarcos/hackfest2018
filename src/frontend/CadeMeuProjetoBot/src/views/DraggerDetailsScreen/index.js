@@ -35,11 +35,10 @@ const step = [
   {
     id: '6',
     options: [
-      { value: 1, label: 'Projetos em tramitações', trigger: '7' }, 
+      { value: 1, label: 'Tramitações de projetos', trigger: '11' }, 
       { value: 2, label: 'Presença', trigger: '4' },
       { value: 3, label: 'Auxílios', trigger: '4' },
       { value: 4, label: 'Salário', trigger: '4' },
-      { value: 5, label: 'Partido', trigger: '4' },
     ],
   },
   {
@@ -49,7 +48,12 @@ const step = [
   },
   {
     id: '8',
-    options: [{ value: 1, label: 'Sim', trigger: '5' }, { value: 2, label: 'Não', trigger: '4' }],
+    options: [{ value: 1, label: 'Sim', trigger: '4' }, { value: 2, label: 'Não', trigger: '4' }],
+  },
+  {
+    id: '11',
+    message: 'O vereador Carlos Tibério Limeira Santos Fernandes possui 81 projetos tramitados/em tramitação atualmente.',
+    trigger: '7',
   },
 ];
 

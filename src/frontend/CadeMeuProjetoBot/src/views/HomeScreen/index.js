@@ -22,7 +22,7 @@ class HomeScreen extends React.Component {
   state = { message: '', robotImage: roboHome, loading: false };
 
   componentDidMount() {
-    this.props.navigation.navigate('Results', { message: this.state.message });
+    //this.props.navigation.navigate('Results', { message: this.state.message });
   }
 
   onChangeText = (message) => {
@@ -36,7 +36,7 @@ class HomeScreen extends React.Component {
   delaySimulator = () => new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
-    }, 0);
+    }, 2000);
   });
 
   onPress = async () => {
