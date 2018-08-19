@@ -21,6 +21,10 @@ class HomeScreen extends React.Component {
 
   state = { message: '', robotImage: roboHome, loading: false };
 
+  componentDidMount() {
+    this.props.navigation.navigate('Results', { message: this.state.message });
+  }
+
   onChangeText = (message) => {
     let robotImage = roboHome;
     if (message) {

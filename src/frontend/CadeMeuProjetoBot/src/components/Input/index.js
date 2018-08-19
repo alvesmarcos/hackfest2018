@@ -16,14 +16,16 @@ export default class Input extends Component {
 
   static defaultProps = {
     editable: true,
-  }
+  };
 
   state = {};
 
   render() {
-    const { value, onChangeText, onPress, editable } = this.props;
+    const {
+      value, onChangeText, onPress, editable, style, // eslint-disable-line
+    } = this.props;
     return (
-      <View style={styles.containerSearch}>
+      <View style={[styles.containerSearch, style || {}]}>
         <View style={styles.textInputContainer}>
           <TextInput editable={editable} onChangeText={text => onChangeText(text)} value={value} />
         </View>

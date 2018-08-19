@@ -21,7 +21,7 @@ const Routes = createStackNavigator(
       header: null,
       headerBackTitle: null,
     },
-    initialRouteName: 'Main'
+    initialRouteName: 'Main',
   },
 );
 
