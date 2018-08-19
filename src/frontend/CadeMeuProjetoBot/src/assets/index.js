@@ -29,9 +29,9 @@ const vereadores = (nome) => {
     case 'João Almeida de Carvalho Júnior':
       return require('./vereadores/joao-almeida-sd-d.jpg');
     case 'Carlos Tibério Limeira Santos Fernandes':
-      return require('./vereadores/joao-almeida-sd-d.jpg');
-    case 'Lucas Clemente de Brito Pereira':
       return require('./vereadores/tiberio-limeira-d.jpg');
+    case 'Lucas Clemente de Brito Pereira':
+      return require('./vereadores/lucas-de-brito-d.jpg');
     case 'Marcos Vinicius Sales Nobrega':
       return require('./vereadores/marcos-vinicius-psdb-d.jpg');
     case 'José Luiz Pereira Gonçalves':
