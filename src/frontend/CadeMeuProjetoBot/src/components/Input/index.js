@@ -22,7 +22,7 @@ export default class Input extends Component {
 
   render() {
     const {
-      value, onChangeText, onPress, editable, style,
+      value, onChangeText, onPress, editable, style, // eslint-disable-line
     } = this.props;
     return (
       <View style={[styles.containerSearch, style || {}]}>
